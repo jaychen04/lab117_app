@@ -29,6 +29,6 @@
 
 @property (nonatomic, copy) NSString *desc;//描述
 @property (nonatomic, assign) int tweetCount;//动弹数
-
+- (instancetype)initWithDict:(NSDictionary *)dict;
 
 @end

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "-[OSCUser initWithDict:]:OSCUser.m">
+      </ContextState>
+      <ContextState
+         contextName = "__28-[LoginViewController login]_block_invoke.156:LoginViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "operation.response">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[AFHTTPRequestOperationManager POST:parameters:success:failure:]:AFHTTPRequestOperationManager.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[LoginViewController login]:LoginViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "__48-[InformationViewController getJsonDataforNews:]_block_invoke:InformationViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "responseObject[@&quot;resultCode&quot;] ">
+            </PersistentString>
+            <PersistentString
+               value = "[resultDic valueForKey:@&quot;pubdate&quot;]">
+            </PersistentString>
+            <PersistentString
+               value = "[resultDic[@&quot;pubdate&quot;] stringValue]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "__28-[LoginViewController login]_block_invoke_2:LoginViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "manager">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "__28-[LoginViewController login]_block_invoke:LoginViewController.m">
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

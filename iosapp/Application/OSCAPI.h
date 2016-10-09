@@ -9,6 +9,12 @@
 #ifndef iosapp_OSCAPI_h
 #define iosapp_OSCAPI_h
 
+#define LAB117_UC_PREFIX   @"http://api.labsoul.com/api/v1/uc/"
+#define LAB117_CMS_PREFIX   @"http://api.labsoul.com/api/v1/cms/"
+
+#define LAB117_LOGIN   @"login"
+#define LAB117_GETArcticle   @"getArcticle"
+
 #define OSCAPI_HTTPS_PREFIX                 @"https://www.oschina.net/action/api/"
 #define OSCAPI_PREFIX                       OSCAPI_HTTPS_PREFIX
 #define OSCAPI_V2_HTTPS_PREFIX              @"https://www.oschina.net/action/apiv2/"

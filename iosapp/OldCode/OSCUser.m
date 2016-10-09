@@ -39,7 +39,14 @@
     return self;
 }
 
-
+- (instancetype)initWithDict:(NSDictionary *)dict
+{
+    self = [super init];
+    if (!self) {return nil;}
+    _userID = [dict [@"ucid"] longLongValue];
+    _name = [[NSString alloc] initWithFormat:@"%lld",[dict [@"userName"] longLongValue]];
+    return self;
+}
 - (BOOL)isEqual:(id)object
 {
     if ([self class] == [object class]) {

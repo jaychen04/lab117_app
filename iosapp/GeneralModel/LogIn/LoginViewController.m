@@ -154,37 +154,25 @@ static NSString * const kShowAccountOperation = @"ShowAccountOperation";
     _hud.label.text = @"正在登录";
     _hud.userInteractionEnabled = NO;
     
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager OSCManager];
-
-    [manager POST:[NSString stringWithFormat:@"%@%@", OSCAPI_HTTPS_PREFIX , OSCAPI_LOGIN_VALIDATE]
-       parameters:@{@"username" : _accountField.text,
-                    @"pwd" : _passwordField.text,
-                    @"keep_login" : @(1)
-                    }
-          success:^(AFHTTPRequestOperation *operation, ONOXMLDocument *responseObject) {
-              ONOXMLElement *result = [responseObject.rootElement firstChildWithTag:@"result"];
-              
-              NSInteger errorCode = [[[result firstChildWithTag:@"errorCode"] numberValue] integerValue];
-              if (!errorCode) {
-                  NSString *errorMessage = [[result firstChildWithTag:@"errorMessage"] stringValue];
-                  _hud.mode = MBProgressHUDModeCustomView;
-                  _hud.label.text = [NSString stringWithFormat:@"%@", errorMessage];
-                  [_hud hideAnimated:YES afterDelay:1];
-                  return;
-              }
-              
-              [_hud hideAnimated:YES afterDelay:1];
-              [Config saveOwnAccount:_accountField.text andPassword:_passwordField.text];
-              ONOXMLElement *userXML = [responseObject.rootElement firstChildWithTag:@"user"];
-              
-              [self renewUserWithXML:userXML];
-          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-              _hud.mode = MBProgressHUDModeCustomView;
-              _hud.label.text = [@(operation.response.statusCode) stringValue];
-              _hud.detailsLabel.text = error.userInfo[NSLocalizedDescriptionKey];
-              
-              [_hud hideAnimated:YES afterDelay:1];
-          }
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager OSCJsonManager];
+    [manager POST:[NSString stringWithFormat:@"%@%@", LAB117_UC_PREFIX , LAB117_LOGIN] parameters:@{@"phone" :_accountField.text,@"password" : _passwordField.text
+    } success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        if ([responseObject[@"errno"] integerValue] != 0) {
+            [_hud hideAnimated:YES afterDelay:1];
+            _hud.mode = MBProgressHUDModeCustomView;
+            _hud.label.text = @"登录出错";
+            return ;
+        }
+        [Config saveOwnAccount:_accountField.text andPassword:_passwordField.text];
+        NSDictionary *dict = responseObject[@"user"];
+        [self renewUserWithDict:dict];
+        
+    } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
+        _hud.mode = MBProgressHUDModeCustomView;
+        _hud.label.text = [@(operation.response.statusCode) stringValue];
+        _hud.detailsLabel.text = error.userInfo[NSLocalizedDescriptionKey];
+        [_hud hideAnimated:YES afterDelay:1];
+    }
      ];
 }
 
@@ -437,6 +425,18 @@ static NSString * const kShowAccountOperation = @"ShowAccountOperation";
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+
+- (void)renewUserWithDict:(NSDictionary *)dict
+{
+    [Config saveProfile:[[OSCUser alloc] initWithDict:dict]];
+    
+    //[OSCThread startPollingNotice];
+    
+    [self saveCookies];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"userRefresh" object:@(YES)];
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 - (void)showOperationAlertView
 {
