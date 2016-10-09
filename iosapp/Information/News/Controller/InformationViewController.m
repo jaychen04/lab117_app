@@ -36,7 +36,7 @@
 #import <MBProgressHUD.h>
 #import <AFNetworking.h>
 #import <MJRefresh.h>
-
+#import "Tools.h"
 
 #define OSC_SCREEN_WIDTH  [UIScreen mainScreen].bounds.size.width
 #define OSC_BANNER_HEIGHT [UIScreen mainScreen].bounds.size.width * 39 / 125
@@ -240,9 +240,9 @@ static NSString * const informationReuseIdentifier = @"InformationTableViewCell"
 
 #pragma mark -- networking Delegate
 -(void)getJsonDataforNews:(BOOL)isRefresh{//yes 下拉 no 上拉
-    NSString *strUrl = [NSString stringWithFormat:@"%@news",OSCAPI_V2_PREFIX];
+//    NSString *strUrl = [NSString stringWithFormat:@"%@news",OSCAPI_V2_PREFIX];
 
-    //NSString *strUrl = [NSString stringWithFormat:@"%@%@",LAB117_CMS_PREFIX,LAB117_GETArcticle];
+    NSString *strUrl = [NSString stringWithFormat:@"%@%@",LAB117_CMS_PREFIX,LAB117_GETArcticle];
     AFHTTPRequestOperationManager* manager = [AFHTTPRequestOperationManager OSCJsonManager];
     if (isRefresh) {    //刷新banners
         [self getBannerData];
@@ -256,18 +256,17 @@ static NSString * const informationReuseIdentifier = @"InformationTableViewCell"
     [manager GET:strUrl
        parameters:paraMutableDic.copy
           success:^(AFHTTPRequestOperation *operation, id responseObject) {
-//              if([responseObject[@"resultCode"] integerValue] == 1) {
-//                  id resultDic = responseObject[@"resultMsg"];
-//                  _systemDate = [resultDic[@"pubdate"] stringValue] ;
-//
-//                  NSArray* items = resultDic[@"resultMsg"];
-//                  NSArray* modelArray = [OSCInformation mj_objectArrayWithKeyValuesArray:items];
-              if([responseObject[@"code"]integerValue] == 1) {
-                  _systemDate = responseObject[@"time"];
-                  
-                  NSDictionary* resultDic = responseObject[@"result"];
-                  NSArray* items = resultDic[@"items"];
+              if([responseObject[@"resultCode"] integerValue] == 1) {
+                  NSArray* items = responseObject[@"resultMsg"];
+                  NSDictionary* resultDic = [items objectAtIndex:0];
+                  _systemDate =[Tools transTimeSp:[[NSString alloc] initWithFormat:@"%lld",[resultDic[@"pubdate"]longLongValue]]];
                   NSArray* modelArray = [OSCInformation mj_objectArrayWithKeyValuesArray:items];
+//              if([responseObject[@"code"]integerValue] == 1) {
+//                  _systemDate = responseObject[@"time"];
+//                  
+//                  NSDictionary* resultDic = responseObject[@"result"];
+//                  NSArray* items = resultDic[@"items"];
+//                  NSArray* modelArray = [OSCInformation mj_objectArrayWithKeyValuesArray:items];
 
                   if (isRefresh) {//下拉得到的数据
                       [self.dataModels removeAllObjects];

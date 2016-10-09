@@ -194,7 +194,6 @@
 		0404C5511D98C7330043E44A /* TitleInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0404C47D1D98C7330043E44A /* TitleInfoTableViewCell.xib */; };
 		0404C5521D98C7330043E44A /* webAndAbsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0404C47F1D98C7330043E44A /* webAndAbsTableViewCell.m */; };
 		0404C5531D98C7330043E44A /* webAndAbsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0404C4801D98C7330043E44A /* webAndAbsTableViewCell.xib */; };
-		0404C5541D98C7330043E44A /* News.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0404C4811D98C7330043E44A /* News.storyboard */; };
 		0404C5551D98C7330043E44A /* CommentDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0404C4851D98C7330043E44A /* CommentDetailViewController.m */; };
 		0404C5561D98C7330043E44A /* CommentDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0404C4861D98C7330043E44A /* CommentDetailViewController.xib */; };
 		0404C5571D98C7330043E44A /* QuesAnsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0404C4881D98C7330043E44A /* QuesAnsDetailViewController.m */; };
@@ -352,6 +351,7 @@
 		38DB5E8F1A496FFD0092C966 /* emoji.plist in Resources */ = {isa = PBXBuildFile; fileRef = 38DB5E8E1A496FFD0092C966 /* emoji.plist */; };
 		38E067441A19AC4900D41976 /* GrowingTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E067431A19AC4900D41976 /* GrowingTextView.m */; };
 		6662BAD01B8C5EBD00D6A9BC /* NSString+pinyin.m in Sources */ = {isa = PBXBuildFile; fileRef = 6662BACF1B8C5EBD00D6A9BC /* NSString+pinyin.m */; };
+		9CF0F4571DA9DC4D00ED4E03 /* Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CF0F4551DA9DC4D00ED4E03 /* Tools.m */; };
 		C57E7B571B56734300F39B5C /* PlaceholderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = C57E7B561B56734300F39B5C /* PlaceholderTextView.m */; };
 		C5A89C371B09C34B00798B1C /* FAImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A89C301B09C34B00798B1C /* FAImageView.m */; };
 		C5A89C381B09C34B00798B1C /* NSString+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A89C321B09C34B00798B1C /* NSString+FontAwesome.m */; };
@@ -737,7 +737,6 @@
 		0404C47E1D98C7330043E44A /* webAndAbsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = webAndAbsTableViewCell.h; sourceTree = "<group>"; };
 		0404C47F1D98C7330043E44A /* webAndAbsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = webAndAbsTableViewCell.m; sourceTree = "<group>"; };
 		0404C4801D98C7330043E44A /* webAndAbsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = webAndAbsTableViewCell.xib; sourceTree = "<group>"; };
-		0404C4811D98C7330043E44A /* News.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = News.storyboard; sourceTree = "<group>"; };
 		0404C4841D98C7330043E44A /* CommentDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentDetailViewController.h; sourceTree = "<group>"; };
 		0404C4851D98C7330043E44A /* CommentDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentDetailViewController.m; sourceTree = "<group>"; };
 		0404C4861D98C7330043E44A /* CommentDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentDetailViewController.xib; sourceTree = "<group>"; };
@@ -1023,6 +1022,8 @@
 		6662BACF1B8C5EBD00D6A9BC /* NSString+pinyin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+pinyin.m"; sourceTree = "<group>"; };
 		74FCF9B11D6D985C0085B2EB /* libc++.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.1.tbd"; path = "usr/lib/libc++.1.tbd"; sourceTree = SDKROOT; };
 		74FCF9B21D6D985C0085B2EB /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		9CF0F4551DA9DC4D00ED4E03 /* Tools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tools.m; sourceTree = "<group>"; };
+		9CF0F4561DA9DC4D00ED4E03 /* Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tools.h; sourceTree = "<group>"; };
 		A5BC048EACA3C378644BCFCF /* libPods-iosapp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iosapp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAF1D4AF1E10C5A05F461AC5 /* Pods-iosapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosapp.release.xcconfig"; path = "Pods/Target Support Files/Pods-iosapp/Pods-iosapp.release.xcconfig"; sourceTree = "<group>"; };
 		C57E7B551B56734300F39B5C /* PlaceholderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceholderTextView.h; sourceTree = "<group>"; };
@@ -1177,6 +1178,8 @@
 		00EDF60C19EFC13500A5C842 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				9CF0F4551DA9DC4D00ED4E03 /* Tools.m */,
+				9CF0F4561DA9DC4D00ED4E03 /* Tools.h */,
 				31F14FC81D41F80300AD0763 /* ELCImagePickerController */,
 				04323DA71D643802008FD302 /* ThumbnailHadle.h */,
 				04323DA81D643802008FD302 /* ThumbnailHadle.m */,
@@ -1687,7 +1690,6 @@
 		0404C41B1D98C7330043E44A /* Information */ = {
 			isa = PBXGroup;
 			children = (
-				0404C4811D98C7330043E44A /* News.storyboard */,
 				0404C41C1D98C7330043E44A /* Activitys */,
 				0404C4311D98C7330043E44A /* Blogs */,
 				0404C44D1D98C7330043E44A /* News */,
@@ -2739,7 +2741,7 @@
 				TargetAttributes = {
 					00D6BCD919EB673200E8754E = {
 						CreatedOnToolsVersion = 6.0.1;
-						DevelopmentTeam = WSUBE85MHP;
+						DevelopmentTeam = LTC53AE2NJ;
 						ProvisioningStyle = Automatic;
 					};
 					00D6BCF519EB673200E8754E = {
@@ -2813,7 +2815,6 @@
 				C5A89C3C1B09C59400798B1C /* FontAwesome.ttf in Resources */,
 				0404C4CD1D98C7330043E44A /* OSCAtMeCell.xib in Resources */,
 				0404C52D1D98C7330043E44A /* NewBlogsViewController.xib in Resources */,
-				0404C5541D98C7330043E44A /* News.storyboard in Resources */,
 				0404C5361D98C7330043E44A /* NewHotBlogTableViewCell.xib in Resources */,
 				C5B1231C1B316830000B29D2 /* css in Resources */,
 				317AD9C91C96AD68008356DE /* recommend_tag.png in Resources */,
@@ -3179,6 +3180,7 @@
 				0404C5261D98C7330043E44A /* ActivityHeadCell.m in Sources */,
 				0404C5341D98C7330043E44A /* BlogCell.m in Sources */,
 				0404C5A91D98C77D0043E44A /* TweetCommentNewCell.m in Sources */,
+				9CF0F4571DA9DC4D00ED4E03 /* Tools.m in Sources */,
 				042F0AA11D52DDB900D3DC76 /* QuartzCanvasView.m in Sources */,
 				0404C3231D98C6BE0043E44A /* MessageCell.m in Sources */,
 				0404C5231D98C7330043E44A /* OSCActivities.m in Sources */,
@@ -3306,7 +3308,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = LTC53AE2NJ;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3360,7 +3362,7 @@
 					"\"UIKit\"",
 					"-fobjc-arc",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "net.oschina.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jay-ch.iosapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -3375,7 +3377,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = LTC53AE2NJ;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3429,7 +3431,7 @@
 					"\"UIKit\"",
 					"-fobjc-arc",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "net.oschina.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jay-ch.iosapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;

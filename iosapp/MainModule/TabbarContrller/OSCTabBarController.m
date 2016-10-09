@@ -173,12 +173,12 @@
     myFriendTweetViewCtl.needCache = YES;
     
     SwipableViewController *newsSVC = [[SwipableViewController alloc] initWithTitle:@"综合"
-                                                                       andSubTitles:@[@"资讯", @"博客", @"问答", @"活动"]
+                                                                       andSubTitles:@[@"热点", @"比赛", @"互动", @"活动"]
                                                                      andControllers:@[newsViewCtl, newHotBlogCtl, quesViewCtl,activitiesViewCtl]
                                                                         underTabbar:YES];
     
-    SwipableViewController *tweetsSVC = [[SwipableViewController alloc] initWithTitle:@"动弹"
-                                                                         andSubTitles:@[@"最新动弹", @"热门动弹", @"我的动弹"]
+    SwipableViewController *tweetsSVC = [[SwipableViewController alloc] initWithTitle:@"实况"
+                                                                         andSubTitles:@[@"最新比赛", @"热门比赛", @"我的比赛"]
                                                                        andControllers:@[newTweetViewCtl, hotTweetViewCtl, myFriendTweetViewCtl]
                                                                           underTabbar:YES];
     
@@ -201,7 +201,7 @@
                              ];
     _linkUtilNavController = [self.viewControllers objectAtIndex:0];
     
-    NSArray *titles = @[@"综合", @"动弹", @"", @"发现", @"我的"];
+    NSArray *titles = @[@"综合", @"实况", @"", @"发现", @"我的"];
     NSArray *images = @[@"tabbar-news", @"tabbar-tweet", @"", @"tabbar-discover", @"tabbar-me"];
     [self.tabBar.items enumerateObjectsUsingBlock:^(UITabBarItem *item, NSUInteger idx, BOOL *stop) {
         [item setTitle:titles[idx]];

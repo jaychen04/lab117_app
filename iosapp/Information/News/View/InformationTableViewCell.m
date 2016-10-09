@@ -9,6 +9,7 @@
 #import "InformationTableViewCell.h"
 #import "OSCInformation.h"
 #import "Utils.h"
+#import "Tools.h"
 
 NSString* InformationTableViewCell_IdentifierString = @"InformationTableViewCellReuseIdenfitier";
 
@@ -45,7 +46,6 @@ NSString* InformationTableViewCell_IdentifierString = @"InformationTableViewCell
     InformationTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:identifierString
                                                                      forIndexPath:indexPath];
 //    objc_class 
-
     return cell;
 }
 
@@ -58,7 +58,7 @@ NSString* InformationTableViewCell_IdentifierString = @"InformationTableViewCell
     
     NSDateFormatter* formatter = [[NSDateFormatter alloc]init];
     formatter.dateFormat = @"yyyy-MM-dd HH:mm:ss";
-    NSDate* date = [formatter dateFromString:viewModel.pubDate];
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:viewModel.pubDate];
     NSDate *systemDate = [formatter dateFromString:_systemTimeDate];
     NSDate *subDate = [formatter dateFromString:[NSString stringWithFormat:@"%@ 00:00:00", [_systemTimeDate componentsSeparatedByString:@" "][0]]];
     

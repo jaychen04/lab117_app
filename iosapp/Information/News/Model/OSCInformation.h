@@ -29,7 +29,7 @@
 
 @property (nonatomic,assign) BOOL recommend;
 
-@property (nonatomic,strong) NSString* pubDate;
+@property (nonatomic,assign) NSInteger pubDate;
 
 @property (nonatomic,strong) NSMutableAttributedString* attributedBody;
 
